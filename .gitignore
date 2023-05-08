@@ -1,0 +1,6 @@
+.img_debug/
+img/
+*.pyc
+data/
+**/__pycache__/*
+runs/
