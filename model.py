@@ -301,6 +301,8 @@ class Discriminator(nn.Module):
         self.embed = spectral_norm(self.embed)
 
     def forward(self, input, class_id):
+
+        input = input + (0.2)*torch.randn(input.shape).to('cuda:0')
         
         out = self.pre_conv(input)
         out = out + self.pre_skip(F.avg_pool2d(input, 2))
